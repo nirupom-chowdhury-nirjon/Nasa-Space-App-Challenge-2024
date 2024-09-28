@@ -1,20 +1,74 @@
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDG Quiz</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG Science Challenge</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="quiz-container">
-        <h1 id="question"></h1>
-        <div id="choices"></div>
-        <p id="explanation"></p>
-        <div id="score"></div>
-        <button id="next-btn">Next Question</button>
-    </div>
 
-    <script src="script.js"></script>
+  <!-- Header -->
+  <header>
+    <h1>SDG Science Challenge</h1>
+    <p>Engage your students in SDG-related science activities!</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Team Setup Section -->
+    <section id="team-setup">
+      <h2>Team Setup</h2>
+      <p>Enter the number of teams:</p>
+      <input type="number" id="teamCount" min="2" max="5" placeholder="Number of teams">
+      <button onclick="setupTeams()">Start Game</button>
+      <div id="teamList"></div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section id="challenge-section">
+      <h2>Challenges</h2>
+      <div id="challenges">
+        <div class="challenge">
+          <h3>Challenge 1: Research and Presentation</h3>
+          <p>Each team researches their assigned SDG and prepares a presentation.</p>
+          <button onclick="completeChallenge(1, 10)">Complete Challenge</button>
+        </div>
+
+        <div class="challenge">
+          <h3>Challenge 2: Science Experiment</h3>
+          <p>Each team performs a hands-on science experiment related to their SDG.</p>
+          <button onclick="completeChallenge(2, 20)">Complete Challenge</button>
+        </div>
+
+        <div class="challenge">
+          <h3>Challenge 3: Problem-Solving Task</h3>
+          <p>Teams come up with a real-world solution to their SDG problem.</p>
+          <button onclick="completeChallenge(3, 15)">Complete Challenge</button>
+        </div>
+
+        <div class="challenge">
+          <h3>Final Presentation</h3>
+          <p>Teams present their findings and solutions.</p>
+          <button onclick="completeChallenge(4, 10)">Complete Challenge</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Points Section -->
+    <section id="points-section">
+      <h2>Points Tracker</h2>
+      <div id="pointsTracker"></div>
+    </section>
+
+    <!-- Winner Section -->
+    <section id="winner-section" style="display:none;">
+      <h2 id="winnerTitle"></h2>
+      <p id="congratulationsMessage"></p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
